@@ -1,6 +1,6 @@
 <template>
     <Header></Header>
-    <ListProducts></ListProducts>
+    <Products></Products>
 </template>
 <script>
 </script>
