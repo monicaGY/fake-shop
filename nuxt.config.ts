@@ -26,10 +26,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       fakeShopDomain: process.env.API_DOMAIN_FAKE_SHOP,
-      userIdShop: process.env.USER_ID_SHOP
+      userIdShop: process.env.USER_ID_SHOP,
+      fakeShopCarts: process.env.API_DOMAIN_FAKE_SHOP_CARTS,
+      cartId: process.env.CART_ID
     }
   },
   css: [
-    '~/assets/css/style.css', 
+    '@/assets/css/style.css', 
   ],
 })

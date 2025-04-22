@@ -33,7 +33,7 @@
 
                 <div class="product-price">{{ product.price }} USD</div>
                 <div class="row justify-content-end">               
-                  <a href="javascript:void(0)" title="Add to cart" @click="addCart()" class="col-auto  border-1 rounded-pill border border-warning cart"><i class="mx-2 fa-solid fa-cart-plus"></i></a>
+                  <a href="javascript:void(0)" title="Add to cart" @click="addCart(product.id)" class="col-auto  border-1 rounded-pill border border-warning cart"><i class="mx-2 fa-solid fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -41,13 +41,31 @@
         </div>
 </template>
 <script setup>
+import { useCartStore } from '@/stores/cart' 
+import { useAlerts } from '@/composables/useAlerts'
+const { successAlert } = useAlerts()
+const cartStore = useCartStore()
+
 const props = defineProps({
   product: {
     type: Object,
     required: true
   }
 })
-function addCart(){
-    // CONTINUE
+
+async function addCart(productId){
+
+  const config = useRuntimeConfig();
+
+  const cartId  = config.public.cartId
+
+  const { data } = await useFetch(
+    `${config.public.fakeShopCarts}carts/${cartId}/products/${productId}/add`,
+    {
+      method: 'POST'
+    }
+  );
+  cartStore.setCartItems(data.value.cart.products)
+  successAlert('New product in the cart')
 }
 </script>
