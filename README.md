@@ -1,80 +1,62 @@
-# api 
-https://fakestoreapi.com/
+# Fake Shop
 
-# Nuxt Minimal Starter
+**Fake Shop** is a simulated online store built with **Nuxt.js** and using **external services**. This project provides an interactive shopping experience with the following key features:
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### Features
 
-## Setup
+- **Explore Products**: View the available items in the store.
+- **Filter by Price**: Easily find products using price filters.
+- **Cart Management**:
+  - **Add products** to the cart.
+  - **Modify the quantity** of products directly from the cart.
+- **Add from the Listing**: Products can also be added to the cart directly from the store view.
 
-Make sure to install dependencies:
+
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Git](https://git-scm.com/downloads)
+
+## Clone and Build the API
+To build and run this project, you'll need to clone the repository and follow the setup instructions provided in the project's README.
+<br>
+
+🔗 [**API Repository – api-fakeShop**](https://github.com/monicaGY/api-fakeShop)
+
+
+## Clone the Repository
+```bash
+# Clone the repository
+git clone https://github.com/monicaGY/fake-shop fake-shop
+
+# Navigate to the project directory
+cd fake-shop
+```
+
+## Environment Setup
 
 ```bash
-# npm
+# Copy the example env file
+cp .env.example .env
+
+# Add the following variables in .env file
+API_DOMAIN_FAKE_SHOP=https://fakestoreapi.com/
+API_DOMAIN_FAKE_SHOP_CARTS=http://localhost:8080/api/
+USER_ID_SHOP=7
+CART_ID=1
+```
+
+## Run the Project
+
+To get the project up and running:
+
+```bash
+# Install dependencies
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Start the server
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
 
