@@ -12,14 +12,15 @@ export const useAlerts = () => {
 
   const errorAlert = (msg: string) => {
     toast.error(msg, {
-      timeout: 5000,
+      timeout: 1000,
       icon: () => h('span', '❌'),
+      hideProgressBar: true,
     })
   }
 
   const infoAlert = (msg: string) => {
     toast.info(msg, {
-      timeout: 3000,
+      timeout: 1000,
       icon: () => h('span', 'ℹ️'),
     })
   }

@@ -59,13 +59,14 @@ async function addCart(productId){
 
   const cartId  = config.public.cartId
 
-  const { data } = await useFetch(
+  console.log('obtener el id del carro',cartId)
+  await useFetch(
     `${config.public.fakeShopCarts}carts/${cartId}/products/${productId}/add`,
     {
       method: 'POST'
     }
   );
-  cartStore.setCartItems(data.value.cart.products)
-  successAlert('New product in the cart')
+  cartStore.updateCartProducts()
+  //successAlert('New product in the cart')
 }
 </script>
